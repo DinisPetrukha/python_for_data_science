@@ -3,6 +3,7 @@ import string
 
 
 def str_analyzer(text: str):
+    """Receives a str and returns the number of all types of chars on the string"""
     total_counter = 0
     upper_counter = 0
     lower_counter = 0
