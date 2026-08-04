@@ -17,6 +17,7 @@ is true. If function is None, return the items that are true."""
 
 
 def main():
+    """Program that mimics the original filter function"""
     print("---Original definition:")
     print(filter.__doc__)
     print("\n---Homemade definition:")

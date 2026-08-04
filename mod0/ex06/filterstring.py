@@ -3,6 +3,9 @@ from ft_filter import ft_filter
 
 
 def main():
+    """Program that accepts two arguments: a string (S)
+and an integer (N). The program should output a list
+of words from S that have a length greater than N."""
     argv = sys.argv
     try:
         assert len(argv) == 3, "the arguments are bad"

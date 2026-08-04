@@ -3,7 +3,8 @@ import string
 
 
 def str_analyzer(text: str):
-    """Receives a str and returns the number of all types of chars on the string"""
+    """Receives a str and returns the number
+of all types of chars on the string"""
     total_counter = 0
     upper_counter = 0
     lower_counter = 0
@@ -34,6 +35,8 @@ def str_analyzer(text: str):
 
 
 def main():
+    """Program that receives a str and returns the number
+of all types of chars on the string"""
     try:
         assert len(sys.argv) <= 2, "more than one argument is provided"
 
