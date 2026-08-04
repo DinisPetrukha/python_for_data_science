@@ -1,6 +1,7 @@
 import sys
 from ft_filter import ft_filter
 
+
 def main():
     argv = sys.argv
     try:
@@ -18,7 +19,6 @@ def main():
 
     except AssertionError as msg:
         print(f"AssertionError: {msg}")
-
 
 
 if __name__ == "__main__":
