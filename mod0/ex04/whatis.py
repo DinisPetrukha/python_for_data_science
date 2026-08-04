@@ -8,7 +8,7 @@ try:
 		try:
 			num = int(sys.argv[1])
 		except ValueError:
-			## raise forces an AssertionError
+			# raise forces an AssertionError
 			raise AssertionError("argument is not an integer")
 
 		if num % 2 == 0:

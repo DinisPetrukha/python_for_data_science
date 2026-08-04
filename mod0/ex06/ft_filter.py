@@ -1,4 +1,5 @@
 def iterable_function1(it):
+    """Returns True if even"""
     if it % 2 == 0:
         return True
 
