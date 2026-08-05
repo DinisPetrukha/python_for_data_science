@@ -1,0 +1,19 @@
+# Python Cache ⚡
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Packaging & Build (ex09) 📦
+build/
+dist/
+*.egg-info/
+
+# Ambientes Virtuais (se usares) 🐍
+.venv/
+venv/
+env/
+
+# Ficheiros do Sistema Operativo 💻
+.DS_Store
+Thumbs.db
