@@ -19,8 +19,8 @@ def transpose(img: np.array) -> np.array:
     height, width = img.shape[0], img.shape[1]
     transposed_img = np.zeros((height, width), dtype=img.dtype)
 
-    for y in range(len(img)):
-        for x in range(len(img[0])):
+    for y in range(height):
+        for x in range(width):
             transposed_img[x][y] = img[y][x][0]
 
     plt.imshow(transposed_img, "grey")
