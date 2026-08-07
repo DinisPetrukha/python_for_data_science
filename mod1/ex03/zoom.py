@@ -46,6 +46,8 @@ def zoom(img: np.array, y_slice: int, x_slice: int) -> np.array:
     plt.imshow(zoom_img, "grey")
     plt.savefig("zoom_output.png")
 
+    return zoom_img
+
 
 def main():
     """
