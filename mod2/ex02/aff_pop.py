@@ -40,7 +40,6 @@ def add_pop(df: pd.DataFrame) -> None:
     plt.xlabel("Year")
     plt.ylabel("Population")
 
-    # 5. Display legend for countries and adjust X axis ticks (every 40 years)
     plt.legend(loc="lower right")
     plt.xticks(campus_data.index[::40])
 
