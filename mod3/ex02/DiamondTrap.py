@@ -42,6 +42,16 @@ def main():
 
     Joffrey.eyes = "purple"
     print(Joffrey.eyes)
+    print()
+
+    print("Inspecting the data structure of class inheritance of King")
+    print([cls.__name__ for cls in King.mro()])
+
+    print("Inspecting the data structure of class inheritance of Baratheon")
+    print([cls.__name__ for cls in Baratheon.mro()])
+
+    print("Inspecting the data structure of class inheritance of Lannister")
+    print([cls.__name__ for cls in Lannister.mro()])
 
 
 if __name__ == "__main__":
