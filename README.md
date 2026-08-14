@@ -1,209 +1,210 @@
 # Python for Data Science — 42 Lisboa
 
-> Piscine de especialização em Python e Data Science da 42 Lisboa.
-> Cinco módulos, 29 exercícios, ~2000 linhas de Python 3.10 escritas sob a norm da 42.
+> Python and Data Science specialization piscine at 42 Lisboa.
+> Five modules, 29 exercises, ~2000 lines of Python 3.10 written under the 42 norm.
 
 [![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![flake8](https://img.shields.io/badge/flake8-passing-brightgreen)](#qualidade-de-código)
+[![flake8](https://img.shields.io/badge/flake8-passing-brightgreen)](#code-quality)
 [![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)](https://numpy.org/)
 [![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C)](https://matplotlib.org/)
-[![Exercícios](https://img.shields.io/badge/exerc%C3%ADcios-29-blue)](#módulo-a-módulo)
+[![Exercises](https://img.shields.io/badge/exercises-29-blue)](#module-by-module)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](mod0/ex09/LICENSE)
 
 ---
 
-## Sobre
+## About
 
-A **Piscine Python for Data Science** é o percurso intensivo com que a [42 Lisboa](https://www.42lisboa.com/)
-introduz Python a quem já domina C. Não há aulas nem professores: cada dia traz um
-*subject* em PDF com um conjunto de exercícios, restrições explícitas e o output
-esperado ao carácter. O trabalho é validado em **peer-evaluation** — outro estudante
-corre o código na sua própria máquina e questiona cada decisão de implementação.
+The **Python for Data Science piscine** is the intensive track through which
+[42 Lisboa](https://www.42lisboa.com/) introduces Python to students who already
+know C. There are no classes and no teachers: every day brings a PDF *subject*
+with a set of exercises, explicit constraints, and the exact expected output.
+Work is validated through **peer evaluation** — another student runs your code
+on their own machine and questions every implementation decision.
 
-O interesse pedagógico do formato está nas restrições. Não basta que o programa
-funcione: o *subject* proíbe bibliotecas para o problema central, obriga a
-construções específicas (uma *list comprehension* aqui, um `yield` ali, um
-decorador acolá) e invalida o exercício se uma única exceção escapar. O resultado
-é que se reimplementa à mão aquilo que normalmente se importa — `filter`, `tqdm`,
-a transposição de matrizes, o desvio-padrão — e só depois se ganha o direito de
-usar a versão da biblioteca.
+The pedagogical interest of the format lies in the constraints. It's not enough
+for the program to work: the *subject* forbids libraries for the core problem,
+mandates specific constructs (a *list comprehension* here, a `yield` there, a
+decorator elsewhere), and invalidates the exercise if a single exception escapes.
+The result is that you reimplement by hand what you'd normally import —
+`filter`, `tqdm`, matrix transposition, standard deviation — and only afterwards
+earn the right to use the library version.
 
-Este repositório é a minha resolução completa dos cinco módulos.
+This repository is my complete solution to the five modules.
 
 ---
 
-## Índice
+## Table of contents
 
-- [Panorama dos módulos](#panorama-dos-módulos)
-- [Competências demonstradas](#competências-demonstradas)
-- [Estrutura do repositório](#estrutura-do-repositório)
-- [Regras e restrições da 42](#regras-e-restrições-da-42)
-- [Módulo a módulo](#módulo-a-módulo)
+- [Module overview](#module-overview)
+- [Skills demonstrated](#skills-demonstrated)
+- [Repository structure](#repository-structure)
+- [42 rules and constraints](#42-rules-and-constraints)
+- [Module by module](#module-by-module)
   - [mod0 — Starting](#mod0--starting)
   - [mod1 — Array](#mod1--array)
   - [mod2 — DataTable](#mod2--datatable)
   - [mod3 — Oriented Object Programming](#mod3--oriented-object-programming)
   - [mod4 — Data Oriented Design](#mod4--data-oriented-design)
-- [Como executar](#como-executar)
-- [Qualidade de código](#qualidade-de-código)
-- [Notas de design](#notas-de-design)
-- [Dados e créditos](#dados-e-créditos)
-- [Licença e autor](#licença-e-autor)
+- [How to run](#how-to-run)
+- [Code quality](#code-quality)
+- [Design notes](#design-notes)
+- [Data and credits](#data-and-credits)
+- [License and author](#license-and-author)
 
 ---
 
-## Panorama dos módulos
+## Module overview
 
-| Módulo | Subject | Ex. | Stack | Conceito central |
+| Module | Subject | Ex. | Stack | Core concept |
 |:---|:---|:---:|:---|:---|
-| [`mod0`](mod0/) | *Starting* | 10 | stdlib, `tqdm`, `setuptools` | Fundamentos, `sys.argv`, geradores, empacotamento |
-| [`mod1`](mod1/) | *Array* | 6 | `numpy`, `Pillow`, `matplotlib` | Arrays N-dimensionais e processamento de imagem |
-| [`mod2`](mod2/) | *DataTable* | 4 | `pandas`, `matplotlib` | Carregamento, limpeza e visualização de datasets |
-| [`mod3`](mod3/) | *Oriented Object Programming* | 5 | stdlib (`abc`) | Herança, MRO/C3, métodos mágicos, `property` |
-| [`mod4`](mod4/) | *Data Oriented Design* | 4 | stdlib (`dataclasses`) | Closures, decoradores, `*args`/`**kwargs` |
+| [`mod0`](mod0/) | *Starting* | 10 | stdlib, `tqdm`, `setuptools` | Fundamentals, `sys.argv`, generators, packaging |
+| [`mod1`](mod1/) | *Array* | 6 | `numpy`, `Pillow`, `matplotlib` | N-dimensional arrays and image processing |
+| [`mod2`](mod2/) | *DataTable* | 4 | `pandas`, `matplotlib` | Loading, cleaning and visualizing datasets |
+| [`mod3`](mod3/) | *Oriented Object Programming* | 5 | stdlib (`abc`) | Inheritance, MRO/C3, magic methods, `property` |
+| [`mod4`](mod4/) | *Data Oriented Design* | 4 | stdlib (`dataclasses`) | Closures, decorators, `*args`/`**kwargs` |
 
 ---
 
-## Competências demonstradas
+## Skills demonstrated
 
-Cada linha aponta para a implementação real no repositório.
+Each row links to the actual implementation in the repository.
 
-### Python idiomático e funcional
+### Idiomatic and functional Python
 
-| Conceito | Onde |
+| Concept | Where |
 |:---|:---|
-| *List comprehensions* como substituto de `filter` | [`mod0/ex06/ft_filter.py`](mod0/ex06/ft_filter.py) |
-| Funções `lambda` e funções de primeira classe | [`mod0/ex06/filterstring.py`](mod0/ex06/filterstring.py) |
-| Geradores e o operador `yield` | [`mod0/ex08/Loading.py`](mod0/ex08/Loading.py), [`generators.py`](mod0/ex08/generators.py) |
-| Exaustão de geradores e geradores infinitos | [`mod0/ex08/generators.py`](mod0/ex08/generators.py) |
-| Closures e `nonlocal` | [`mod4/ex01/in_out.py`](mod4/ex01/in_out.py) |
-| Decoradores parametrizados (fábrica de 3 níveis) | [`mod4/ex02/callLimit.py`](mod4/ex02/callLimit.py) |
-| `*args` / `**kwargs` com despacho por keyword | [`mod4/ex00/statistics.py`](mod4/ex00/statistics.py) |
-| Introspeção: `__doc__`, `__dict__`, `__name__`, `mro()` | [`mod0/ex02`](mod0/ex02/find_ft_type.py), [`mod3/ex02`](mod3/ex02/DiamondTrap.py) |
-| *Type hints* PEP 604 (`int \| float`, `list[float]`) | [`mod1/ex00/give_bmi.py`](mod1/ex00/give_bmi.py), [`mod3/ex04`](mod3/ex04/ft_calculator.py) |
+| *List comprehensions* as a substitute for `filter` | [`mod0/ex06/ft_filter.py`](mod0/ex06/ft_filter.py) |
+| `lambda` functions and first-class functions | [`mod0/ex06/filterstring.py`](mod0/ex06/filterstring.py) |
+| Generators and the `yield` operator | [`mod0/ex08/Loading.py`](mod0/ex08/Loading.py), [`generators.py`](mod0/ex08/generators.py) |
+| Generator exhaustion and infinite generators | [`mod0/ex08/generators.py`](mod0/ex08/generators.py) |
+| Closures and `nonlocal` | [`mod4/ex01/in_out.py`](mod4/ex01/in_out.py) |
+| Parameterized decorators (3-level factory) | [`mod4/ex02/callLimit.py`](mod4/ex02/callLimit.py) |
+| `*args` / `**kwargs` with keyword-driven dispatch | [`mod4/ex00/statistics.py`](mod4/ex00/statistics.py) |
+| Introspection: `__doc__`, `__dict__`, `__name__`, `mro()` | [`mod0/ex02`](mod0/ex02/find_ft_type.py), [`mod3/ex02`](mod3/ex02/DiamondTrap.py) |
+| PEP 604 type hints (`int \| float`, `list[float]`) | [`mod1/ex00/give_bmi.py`](mod1/ex00/give_bmi.py), [`mod3/ex04`](mod3/ex04/ft_calculator.py) |
 
-### Programação orientada a objetos
+### Object-oriented programming
 
-| Conceito | Onde |
+| Concept | Where |
 |:---|:---|
-| Classes abstratas (`ABC`, `@abstractmethod`) | [`mod3/ex00/S1E9.py`](mod3/ex00/S1E9.py) |
-| Herança e `super()` | [`mod3/ex01/S1E7.py`](mod3/ex01/S1E7.py) |
+| Abstract classes (`ABC`, `@abstractmethod`) | [`mod3/ex00/S1E9.py`](mod3/ex00/S1E9.py) |
+| Inheritance and `super()` | [`mod3/ex01/S1E7.py`](mod3/ex01/S1E7.py) |
 | `__repr__` / `__str__` | [`mod3/ex01/S1E7.py`](mod3/ex01/S1E7.py) |
-| `@classmethod` como *factory* | [`mod3/ex01/S1E7.py`](mod3/ex01/S1E7.py) |
-| Herança em diamante e linearização C3 | [`mod3/ex02/DiamondTrap.py`](mod3/ex02/DiamondTrap.py) |
+| `@classmethod` as a factory | [`mod3/ex01/S1E7.py`](mod3/ex01/S1E7.py) |
+| Diamond inheritance and C3 linearization | [`mod3/ex02/DiamondTrap.py`](mod3/ex02/DiamondTrap.py) |
 | `property()` — getters/setters | [`mod3/ex02/DiamondTrap.py`](mod3/ex02/DiamondTrap.py) |
-| Sobrecarga de operadores (`__add__`, `__truediv__`, …) | [`mod3/ex03/ft_calculator.py`](mod3/ex03/ft_calculator.py) |
+| Operator overloading (`__add__`, `__truediv__`, …) | [`mod3/ex03/ft_calculator.py`](mod3/ex03/ft_calculator.py) |
 | `@staticmethod` | [`mod3/ex04/ft_calculator.py`](mod3/ex04/ft_calculator.py) |
 | `@dataclass`, `field(init=False)`, `__post_init__` | [`mod4/ex03/new_student.py`](mod4/ex03/new_student.py) |
 
-### Data Science
+### Data science
 
-| Conceito | Onde |
+| Concept | Where |
 |:---|:---|
-| Aritmética vetorizada em NumPy | [`mod1/ex00/give_bmi.py`](mod1/ex00/give_bmi.py) |
-| Máscaras booleanas | [`mod1/ex00/give_bmi.py`](mod1/ex00/give_bmi.py) |
-| *Slicing* multi-eixo e objetos `slice()` | [`mod1/ex01/array2D.py`](mod1/ex01/array2D.py), [`mod1/ex03/zoom.py`](mod1/ex03/zoom.py) |
-| *Fancy indexing* sobre o eixo dos canais | [`mod1/ex05/pimp_image.py`](mod1/ex05/pimp_image.py) |
-| Redução de eixo (`np.mean(axis=-1)`) | [`mod1/ex05/pimp_image.py`](mod1/ex05/pimp_image.py) |
-| Transposição de matrizes implementada de raiz | [`mod1/ex04/rotate.py`](mod1/ex04/rotate.py) |
-| Imagem → array via Pillow | [`mod1/ex02/load_image.py`](mod1/ex02/load_image.py) |
-| I/O de CSV e indexação em pandas | [`mod2/ex00/load_csv.py`](mod2/ex00/load_csv.py) |
-| Limpeza de dados (`'29M'` → `29000000.0`) | [`mod2/ex02/aff_pop.py`](mod2/ex02/aff_pop.py) |
-| Seleção por rótulo (`.loc`) e `Series.apply` | [`mod2/ex02/aff_pop.py`](mod2/ex02/aff_pop.py) |
-| Séries temporais, dispersão, escala logarítmica | [`mod2/ex01`](mod2/ex01/aff_life.py), [`mod2/ex03`](mod2/ex03/projection_life.py) |
-| Estatística descritiva implementada de raiz | [`mod4/ex00/statistics.py`](mod4/ex00/statistics.py) |
+| Vectorized arithmetic in NumPy | [`mod1/ex00/give_bmi.py`](mod1/ex00/give_bmi.py) |
+| Boolean masks | [`mod1/ex00/give_bmi.py`](mod1/ex00/give_bmi.py) |
+| Multi-axis slicing and `slice()` objects | [`mod1/ex01/array2D.py`](mod1/ex01/array2D.py), [`mod1/ex03/zoom.py`](mod1/ex03/zoom.py) |
+| Fancy indexing over the channel axis | [`mod1/ex05/pimp_image.py`](mod1/ex05/pimp_image.py) |
+| Axis reduction (`np.mean(axis=-1)`) | [`mod1/ex05/pimp_image.py`](mod1/ex05/pimp_image.py) |
+| Matrix transposition implemented from scratch | [`mod1/ex04/rotate.py`](mod1/ex04/rotate.py) |
+| Image → array via Pillow | [`mod1/ex02/load_image.py`](mod1/ex02/load_image.py) |
+| CSV I/O and indexing in pandas | [`mod2/ex00/load_csv.py`](mod2/ex00/load_csv.py) |
+| Data cleaning (`'29M'` → `29000000.0`) | [`mod2/ex02/aff_pop.py`](mod2/ex02/aff_pop.py) |
+| Label-based selection (`.loc`) and `Series.apply` | [`mod2/ex02/aff_pop.py`](mod2/ex02/aff_pop.py) |
+| Time series, scatter plots, log scale | [`mod2/ex01`](mod2/ex01/aff_life.py), [`mod2/ex03`](mod2/ex03/projection_life.py) |
+| Descriptive statistics implemented from scratch | [`mod4/ex00/statistics.py`](mod4/ex00/statistics.py) |
 
-### Engenharia de software
+### Software engineering
 
-| Conceito | Onde |
+| Concept | Where |
 |:---|:---|
-| Empacotamento com `pyproject.toml` / `setuptools` | [`mod0/ex09/pyproject.toml`](mod0/ex09/pyproject.toml) |
-| `__init__.py`, imports relativos, `__all__` | [`mod0/ex09/ft_package/__init__.py`](mod0/ex09/ft_package/__init__.py) |
-| Distribuição instalável por `pip` (wheel + sdist) | [`mod0/ex09/README.md`](mod0/ex09/README.md) |
-| Tratamento de erros sem exceções por apanhar | transversal |
-| Renderização em terminal com `\r` e `os.get_terminal_size` | [`mod0/ex08/Loading.py`](mod0/ex08/Loading.py) |
-| Conformidade com linter (flake8 / PEP 8) | [ver secção](#qualidade-de-código) |
+| Packaging with `pyproject.toml` / `setuptools` | [`mod0/ex09/pyproject.toml`](mod0/ex09/pyproject.toml) |
+| `__init__.py`, relative imports, `__all__` | [`mod0/ex09/ft_package/__init__.py`](mod0/ex09/ft_package/__init__.py) |
+| `pip`-installable distribution (wheel + sdist) | [`mod0/ex09/README.md`](mod0/ex09/README.md) |
+| Error handling with no exception left uncaught | cross-cutting |
+| Terminal rendering with `\r` and `os.get_terminal_size` | [`mod0/ex08/Loading.py`](mod0/ex08/Loading.py) |
+| Linter compliance (flake8 / PEP 8) | [see section](#code-quality) |
 
 ---
 
-## Estrutura do repositório
+## Repository structure
 
-Cada exercício é um diretório autónomo e executável — regra imposta pela 42, que
-avalia cada `ex` isoladamente.
+Every exercise is a self-contained, runnable directory — a rule enforced by 42,
+which evaluates each `ex` in isolation.
 
 ```
 python_for_data_science/
-├── en.subject python.pdf              # apresentação geral da piscine
+├── en.subject python.pdf              # general presentation of the piscine
 │
-├── mod0/  Starting                    # fundamentos, CLI, geradores, packaging
+├── mod0/  Starting                    # fundamentals, CLI, generators, packaging
 │   ├── ex00/  Hello.py                # list, tuple, set, dict
 │   ├── ex01/  format_ft_time.py       # time, strftime, format specs
-│   ├── ex02/  find_ft_type.py         # introspeção de tipos
+│   ├── ex02/  find_ft_type.py         # type introspection
 │   ├── ex03/  NULL_not_found.py       # None, NaN, 0, "", False
 │   ├── ex04/  whatis.py               # sys.argv, assert
-│   ├── ex05/  building.py             # análise de strings, stdin
-│   ├── ex06/  ft_filter.py            # filter reimplementado
+│   ├── ex05/  building.py             # string analysis, stdin
+│   ├── ex06/  ft_filter.py            # filter reimplemented
 │   │          filterstring.py         # lambda + list comprehension
-│   ├── ex07/  sos.py                  # codificador de Morse
-│   ├── ex08/  Loading.py              # ft_tqdm — gerador com barra
-│   │          generators.py           # laboratório de geradores
-│   └── ex09/  ft_package/             # pacote Python instalável
+│   ├── ex07/  sos.py                  # Morse code encoder
+│   ├── ex08/  Loading.py              # ft_tqdm — generator-driven progress bar
+│   │          generators.py           # generators playground
+│   └── ex09/  ft_package/             # installable Python package
 │              pyproject.toml, LICENSE, README.md
 │
-├── mod1/  Array                       # NumPy e imagem
-│   ├── ex00/  give_bmi.py             # vetorização, máscaras booleanas
-│   ├── ex01/  array2D.py              # shape, slicing 2D
+├── mod1/  Array                       # NumPy and images
+│   ├── ex00/  give_bmi.py             # vectorization, boolean masks
+│   ├── ex01/  array2D.py              # shape, 2D slicing
 │   ├── ex02/  load_image.py           # Pillow → np.array
-│   ├── ex03/  zoom.py                 # crop centrado + escala de cinzentos
-│   ├── ex04/  rotate.py               # transposição manual
-│   └── ex05/  pimp_image.py           # 5 filtros de cor
+│   ├── ex03/  zoom.py                 # centered crop + grayscale
+│   ├── ex04/  rotate.py               # manual transpose
+│   └── ex05/  pimp_image.py           # 5 color filters
 │
 ├── mod2/  DataTable                   # pandas + matplotlib (Gapminder)
-│   ├── ex00/  load_csv.py             # carregamento robusto de CSV
-│   ├── ex01/  aff_life.py             # esperança de vida em Portugal
-│   ├── ex02/  aff_pop.py              # população: Portugal vs França
-│   └── ex03/  projection_life.py      # PIB vs esperança de vida, 1900
+│   ├── ex00/  load_csv.py             # robust CSV loading
+│   ├── ex01/  aff_life.py             # life expectancy in Portugal
+│   ├── ex02/  aff_pop.py              # population: Portugal vs France
+│   └── ex03/  projection_life.py      # GDP vs life expectancy, 1900
 │
-├── mod3/  Oriented Object Programming # Game of Thrones como caso de estudo
+├── mod3/  Oriented Object Programming # Game of Thrones as a case study
 │   ├── ex00/  S1E9.py                 # Character (ABC) + Stark
 │   ├── ex01/  S1E7.py                 # Baratheon, Lannister, classmethod
 │   ├── ex02/  DiamondTrap.py          # King(Baratheon, Lannister) — C3
-│   ├── ex03/  ft_calculator.py        # sobrecarga de operadores
-│   └── ex04/  ft_calculator.py        # produto escalar via staticmethod
+│   ├── ex03/  ft_calculator.py        # operator overloading
+│   └── ex04/  ft_calculator.py        # dot product via staticmethod
 │
-└── mod4/  Data Oriented Design        # Python funcional
-    ├── ex00/  statistics.py           # estatística de raiz
-    ├── ex01/  in_out.py               # closures e nonlocal
-    ├── ex02/  callLimit.py            # decorador parametrizado
+└── mod4/  Data Oriented Design        # functional Python
+    ├── ex00/  statistics.py           # statistics from scratch
+    ├── ex01/  in_out.py               # closures and nonlocal
+    ├── ex02/  callLimit.py            # parameterized decorator
     └── ex03/  new_student.py          # dataclass
 ```
 
-Cada módulo inclui o respetivo `en.subject*.pdf`. Os ficheiros `tester.py` são
-bancos de ensaio meus — a 42 não os avalia, mas são a ferramenta usada na defesa.
+Each module includes its own `en.subject*.pdf`. The `tester.py` files are my own
+test harnesses — 42 doesn't grade them, but they're the tool used during the defense.
 
 ---
 
-## Regras e restrições da 42
+## 42 rules and constraints
 
-O código deste repositório obedece às regras dos *subjects*. Valem a pena
-explicitar-se, porque explicam decisões que de outra forma pareceriam arbitrárias:
+The code in this repository follows the rules laid out in the *subjects*. They're
+worth spelling out, because they explain decisions that would otherwise look arbitrary:
 
-- **Python 3.10** obrigatório.
-- **Zero variáveis globais.**
-- **Nenhum código no *global scope*.** Todo o programa tem `main()` e a guarda
+- **Python 3.10** required.
+- **Zero global variables.**
+- **No code in the global scope.** Every program has a `main()` guarded by
   `if __name__ == "__main__": main()`.
-- **`__doc__` obrigatório** em cada função, classe e método.
-- **Imports explícitos.** `import numpy as np` é obrigatório; `from pandas import *`
-  vale **0** no exercício.
-- **Nenhuma exceção pode escapar** — nem sequer nos casos de erro que o subject
-  manda testar. Uma exceção não apanhada invalida o exercício.
-- **Conformidade com a norm**, que na 42 significa `flake8` sem avisos.
+- **`__doc__` required** on every function, class and method.
+- **Explicit imports.** `import numpy as np` is mandatory; `from pandas import *`
+  scores **0** on the exercise.
+- **No exception may escape** — not even for the error cases the subject explicitly
+  asks you to test. An uncaught exception invalidates the exercise.
+- **Norm compliance**, which at 42 means `flake8` with zero warnings.
 
-Daqui nasce um idioma de tratamento de erros usado de forma uniforme em todo o
-repositório: a asserção descreve a pré-condição, o `try` garante que nada escapa,
-e erros de outros tipos são traduzidos para `AssertionError` para uniformizar a
-mensagem ao utilizador.
+Out of this comes an error-handling idiom used consistently across the repository:
+the assertion documents the precondition, the `try` guarantees nothing escapes, and
+errors of other kinds are translated into `AssertionError` to keep the message to
+the user consistent.
 
 ```python
 try:
@@ -217,35 +218,35 @@ except AssertionError as msg:
 
 ---
 
-## Módulo a módulo
+## Module by module
 
 ### mod0 — *Starting*
 
 > *"Today, you will learn the basics of the Python programming language."*
 
-Do primeiro `print` até um pacote instalável por `pip`. A meio do módulo — logo a
-seguir ao `ex04` — o *subject* introduz as regras adicionais (`main()`, docstrings,
-flake8), e o estilo do código muda visivelmente a partir daí.
+From the first `print` to a `pip`-installable package. Halfway through the module —
+right after `ex04` — the *subject* introduces the additional rules (`main()`,
+docstrings, flake8), and the code style visibly changes from there on.
 
-| Ex | Ficheiro | O que faz | Conceito-chave |
+| Ex | File | What it does | Key concept |
 |:---:|:---|:---|:---|
-| 00 | [`Hello.py`](mod0/ex00/Hello.py) | Muta os quatro contentores base e imprime-os | `list`, `tuple`, `set`, `dict` e mutabilidade |
-| 01 | [`format_ft_time.py`](mod0/ex01/format_ft_time.py) | Epoch com separador de milhares e notação científica | `time`, `strftime`, format specs (`,.4f`, `.2e`) |
-| 02 | [`find_ft_type.py`](mod0/ex02/find_ft_type.py) | Imprime o tipo do objeto e devolve 42 | Introspeção via `type()` e `__name__` |
-| 03 | [`NULL_not_found.py`](mod0/ex03/NULL_not_found.py) | Distingue as cinco formas de "nada" em Python | Semântica de `None`, `NaN`, `0`, `""`, `False` |
-| 04 | [`whatis.py`](mod0/ex04/whatis.py) | Par ou ímpar, a partir de um argumento CLI | `sys.argv`, `assert`, tradução de exceções |
-| 05 | [`building.py`](mod0/ex05/building.py) | Conta maiúsculas, minúsculas, pontuação, dígitos e espaços | `string.punctuation`, predicados `str.is*`, `stdin` |
-| 06 | [`ft_filter.py`](mod0/ex06/ft_filter.py) · [`filterstring.py`](mod0/ex06/filterstring.py) | Reimplementa `filter` e filtra palavras por comprimento | *List comprehension*, `lambda` |
-| 07 | [`sos.py`](mod0/ex07/sos.py) | Codifica uma string em código Morse | Dicionário como tabela de conversão |
-| 08 | [`Loading.py`](mod0/ex08/Loading.py) | Reimplementa `tqdm` | Geradores, `yield`, controlo de terminal |
-| 09 | [`ft_package/`](mod0/ex09/) | Pacote publicável e instalável | `pyproject.toml`, `setuptools`, `__all__` |
+| 00 | [`Hello.py`](mod0/ex00/Hello.py) | Mutates the four base containers and prints them | `list`, `tuple`, `set`, `dict` and mutability |
+| 01 | [`format_ft_time.py`](mod0/ex01/format_ft_time.py) | Epoch with thousands separator and scientific notation | `time`, `strftime`, format specs (`,.4f`, `.2e`) |
+| 02 | [`find_ft_type.py`](mod0/ex02/find_ft_type.py) | Prints the object's type and returns 42 | Introspection via `type()` and `__name__` |
+| 03 | [`NULL_not_found.py`](mod0/ex03/NULL_not_found.py) | Distinguishes the five forms of "nothing" in Python | Semantics of `None`, `NaN`, `0`, `""`, `False` |
+| 04 | [`whatis.py`](mod0/ex04/whatis.py) | Odd or even, from a CLI argument | `sys.argv`, `assert`, exception translation |
+| 05 | [`building.py`](mod0/ex05/building.py) | Counts uppercase, lowercase, punctuation, digits and spaces | `string.punctuation`, `str.is*` predicates, `stdin` |
+| 06 | [`ft_filter.py`](mod0/ex06/ft_filter.py) · [`filterstring.py`](mod0/ex06/filterstring.py) | Reimplements `filter` and filters words by length | *List comprehension*, `lambda` |
+| 07 | [`sos.py`](mod0/ex07/sos.py) | Encodes a string into Morse code | Dictionary as a lookup table |
+| 08 | [`Loading.py`](mod0/ex08/Loading.py) | Reimplements `tqdm` | Generators, `yield`, terminal control |
+| 09 | [`ft_package/`](mod0/ex09/) | Publishable, installable package | `pyproject.toml`, `setuptools`, `__all__` |
 
-#### Destaque — `ex06`: reimplementar `filter`
+#### Highlight — `ex06`: reimplementing `filter`
 
-O *subject* exige que `ft_filter.__doc__` devolva o mesmo que `filter.__doc__` e
-que a recodificação use uma *list comprehension*. Repare-se no ramo `func is None`,
-que replica o comportamento pouco conhecido do `filter` original: sem função, o que
-sobrevive é o que for *truthy*.
+The *subject* requires that `ft_filter.__doc__` return the same as `filter.__doc__`,
+and that the recoding use a *list comprehension*. Note the `func is None` branch,
+which replicates a lesser-known behavior of the original `filter`: with no function,
+what survives is whatever is *truthy*.
 
 ```python
 def ft_filter(func, iterable):
@@ -268,12 +269,12 @@ $ python3 filterstring.py 3 "Hello the World"
 AssertionError: the arguments are bad
 ```
 
-#### Destaque — `ex08`: um `tqdm` escrito à mão
+#### Highlight — `ex08`: a hand-rolled `tqdm`
 
-A única biblioteca autorizada é `os`. A barra é um **gerador**: entrega o elemento
-ao chamador com `yield` e, a cada iteração, reescreve a linha com `\r`. A largura
-útil é calculada a partir de `os.get_terminal_size()` menos o espaço ocupado pela
-moldura, para que a barra se adapte a qualquer terminal.
+The only library allowed is `os`. The bar is a **generator**: it hands the element
+back to the caller with `yield` and, on every iteration, rewrites the line with
+`\r`. The usable width is computed from `os.get_terminal_size()` minus the space
+taken by the bar's frame, so it adapts to any terminal.
 
 ```python
 def ft_tqdm(lst: range) -> None:
@@ -305,10 +306,11 @@ def ft_tqdm(lst: range) -> None:
 100%|██████████████████████████████████| 333/333 [00:01<00:00, 191.61it/s]
 ```
 
-O acompanhamento em [`generators.py`](mod0/ex08/generators.py) explora o resto do
-tema: a exaustão de um gerador ao segundo `for`, `next()` e geradores infinitos.
+The companion [`generators.py`](mod0/ex08/generators.py) explores the rest of the
+topic: a generator being exhausted on the second `for` loop, `next()`, and
+infinite generators.
 
-#### Destaque — `ex09`: um pacote a sério
+#### Highlight — `ex09`: a real package
 
 ```console
 $ pip install ./dist/ft_package-0.0.1-py3-none-any.whl
@@ -335,20 +337,20 @@ license = { text = "MIT" }
 
 > *"Today, you will discover arrays, their manipulations, and work on images."*
 
-Uma imagem é um `np.array` de forma `(altura, largura, canais)`. Todo o módulo
-explora essa identidade: recortar é *slicing*, isolar uma cor é indexar o último
-eixo, converter para cinzentos é reduzi-lo.
+An image is an `np.array` of shape `(height, width, channels)`. The whole module
+explores that identity: cropping is *slicing*, isolating a color is indexing the
+last axis, converting to grayscale is reducing it.
 
-| Ex | Ficheiro | O que faz | Conceito-chave |
+| Ex | File | What it does | Key concept |
 |:---:|:---|:---|:---|
-| 00 | [`give_bmi.py`](mod1/ex00/give_bmi.py) | IMC vetorizado + limiar booleano | Vetorização, máscaras booleanas |
-| 01 | [`array2D.py`](mod1/ex01/array2D.py) | Imprime `shape` e trunca por *slicing* | Objetos `slice()`, validação de matrizes |
-| 02 | [`load_image.py`](mod1/ex02/load_image.py) | Carrega JPG/JPEG para `np.array` | Pillow, tratamento de erros por tipo |
-| 03 | [`zoom.py`](mod1/ex03/zoom.py) | Recorte centrado 400×400 em escala de cinzentos | *Slicing* multi-eixo |
-| 04 | [`rotate.py`](mod1/ex04/rotate.py) | Transpõe a imagem **sem biblioteca** | Transposição manual, `np.zeros` |
-| 05 | [`pimp_image.py`](mod1/ex05/pimp_image.py) | Cinco filtros de cor | *Fancy indexing*, *broadcasting*, redução de eixo |
+| 00 | [`give_bmi.py`](mod1/ex00/give_bmi.py) | Vectorized BMI + boolean threshold | Vectorization, boolean masks |
+| 01 | [`array2D.py`](mod1/ex01/array2D.py) | Prints `shape` and truncates via *slicing* | `slice()` objects, matrix validation |
+| 02 | [`load_image.py`](mod1/ex02/load_image.py) | Loads JPG/JPEG into `np.array` | Pillow, per-type error handling |
+| 03 | [`zoom.py`](mod1/ex03/zoom.py) | Centered 400×400 crop in grayscale | Multi-axis slicing |
+| 04 | [`rotate.py`](mod1/ex04/rotate.py) | Transposes the image **with no library** | Manual transposition, `np.zeros` |
+| 05 | [`pimp_image.py`](mod1/ex05/pimp_image.py) | Five color filters | Fancy indexing, broadcasting, axis reduction |
 
-#### Destaque — `ex00`: vetorização em vez de ciclos
+#### Highlight — `ex00`: vectorization instead of loops
 
 ```console
 $ python3 tester.py
@@ -356,15 +358,15 @@ $ python3 tester.py
 [False, True]
 ```
 
-O IMC é calculado de uma vez para todo o vetor, e o limiar produz diretamente um
-array de booleanos — sem um único `for`.
+BMI is computed for the whole vector at once, and the threshold produces a boolean
+array directly — not a single `for` loop.
 
-#### Destaque — `ex04`: transposição proibida de importar
+#### Highlight — `ex04`: a transpose you're not allowed to import
 
 > *"You have to do the transpose yourself, no library is allowed for the transpose."*
 
-Sem `.T`, sem `np.transpose`. Aloca-se o destino com o `dtype` preservado e
-percorrem-se os dois eixos, trocando os índices e colapsando o eixo dos canais:
+No `.T`, no `np.transpose`. The destination is allocated with the `dtype` preserved,
+and both axes are walked, swapping indices and collapsing the channel axis:
 
 ```python
 def transpose(img: np.array) -> np.array:
@@ -377,25 +379,25 @@ def transpose(img: np.array) -> np.array:
             transposed_img[x][y] = img[y][x][0]
 ```
 
-#### Destaque — `ex05`: filtros sob restrição de operadores
+#### Highlight — `ex05`: filters under operator restrictions
 
-O *subject* limita os operadores permitidos por filtro — `invert` pode usar
-`= + - *`, `red` apenas `= *`, `green` apenas `= -`, `blue` apenas `=`, e `grey`
-apenas `= /`. A restrição força a pensar em termos de *broadcasting* e de indexação
-de eixos, e não em ciclos sobre píxeis.
+The *subject* restricts which operators each filter may use — `invert` may use
+`= + - *`, `red` only `= *`, `green` only `= -`, `blue` only `=`, and `grey` only
+`= /`. The restriction forces you to think in terms of broadcasting and axis
+indexing, not pixel-by-pixel loops.
 
 ```python
 def ft_invert(img: np.array):
     """Inverts the color of the image received."""
-    return_img = 255 - img          # broadcasting sobre todo o array
+    return_img = 255 - img          # broadcasting over the whole array
 
 def ft_green(img: np.array):
     """Applies a green filter by setting blue and red channels to zero."""
-    return_img = img.copy()         # .copy() para não mutar a origem
-    return_img[:, :, [0, 2]] = 0    # fancy indexing no eixo dos canais
+    return_img = img.copy()         # .copy() so the source isn't mutated
+    return_img[:, :, [0, 2]] = 0    # fancy indexing on the channel axis
 
 def ft_grey(img: np.array):
-    return_img = np.mean(img, axis=-1)   # redução do eixo dos canais
+    return_img = np.mean(img, axis=-1)   # reduction of the channel axis
 ```
 
 ---
@@ -404,20 +406,20 @@ def ft_grey(img: np.array):
 
 > *"Today, you will learn how to load, manipulate and display data table."*
 
-Dados reais da [Gapminder](https://www.gapminder.org/) em formato largo — uma
-linha por país, uma coluna por ano, de 1800 a 2100.
+Real [Gapminder](https://www.gapminder.org/) data in wide format — one row per
+country, one column per year, from 1800 to 2100.
 
-| Ex | Ficheiro | O que faz | Conceito-chave |
+| Ex | File | What it does | Key concept |
 |:---:|:---|:---|:---|
-| 00 | [`load_csv.py`](mod2/ex00/load_csv.py) | Carrega o CSV, indexa por país, devolve `None` em erro | `read_csv`, `set_index`, `.shape` |
-| 01 | [`aff_life.py`](mod2/ex01/aff_life.py) | Esperança de vida em Portugal ao longo de 3 séculos | `.loc`, série temporal |
-| 02 | [`aff_pop.py`](mod2/ex02/aff_pop.py) | População de Portugal vs França, 1800–2050 | Limpeza de dados, `Series.apply`, legendas |
-| 03 | [`projection_life.py`](mod2/ex03/projection_life.py) | PIB *per capita* vs esperança de vida em 1900 | Dispersão, escala logarítmica, junção por índice |
+| 00 | [`load_csv.py`](mod2/ex00/load_csv.py) | Loads the CSV, indexes by country, returns `None` on error | `read_csv`, `set_index`, `.shape` |
+| 01 | [`aff_life.py`](mod2/ex01/aff_life.py) | Life expectancy in Portugal across 3 centuries | `.loc`, time series |
+| 02 | [`aff_pop.py`](mod2/ex02/aff_pop.py) | Population of Portugal vs France, 1800–2050 | Data cleaning, `Series.apply`, legends |
+| 03 | [`projection_life.py`](mod2/ex03/projection_life.py) | GDP *per capita* vs life expectancy in 1900 | Scatter plot, log scale, index-based join |
 
-#### Destaque — `ex00`: carregamento que nunca rebenta
+#### Highlight — `ex00`: loading that never crashes
 
-O contrato do *subject* é claro: devolver `None` se o caminho for mau, se o formato
-for mau, se o que quer que seja correr mal.
+The *subject*'s contract is clear: return `None` if the path is bad, if the format
+is bad, if anything at all goes wrong.
 
 ```python
 def load(path: str) -> pd.DataFrame:
@@ -438,15 +440,15 @@ $ python3 tester.py
 Loading dataset of dimensions (195, 301)
 ```
 
-Os *fixtures* de teste estão no repositório e são deliberados: [`test.csv`](mod2/ex00/test.csv)
-está vazio, e [`life_expectancy_years copy.csv`](mod2/ex00/) é idêntico ao original
-exceto no cabeçalho — `pais` em vez de `country` — para exercitar o ramo em que a
-coluna de índice não existe.
+The test fixtures in the repository are deliberate: [`test.csv`](mod2/ex00/test.csv)
+is empty, and [`life_expectancy_years copy.csv`](mod2/ex00/) is identical to the
+original except for its header — `pais` instead of `country` — to exercise the
+branch where the index column doesn't exist.
 
-#### Destaque — `ex02`: os dados vêm sujos
+#### Highlight — `ex02`: the data arrives dirty
 
-A Gapminder escreve a população como `'29M'`, `'10k'`, `'1.4B'`. Antes de plotar,
-é preciso normalizar tudo para `float`:
+Gapminder writes population as `'29M'`, `'10k'`, `'1.4B'`. Before plotting,
+everything has to be normalized to `float`:
 
 ```python
 def clean_pop(val):
@@ -463,18 +465,19 @@ def clean_pop(val):
 ```
 
 ```python
-df_subset = df.loc[:, "1800":"2050"]           # slicing de colunas por rótulo
+df_subset = df.loc[:, "1800":"2050"]           # label-based column slicing
 campus_data = df_subset.loc["France"].apply(clean_pop)
 other_data = df_subset.loc["Portugal"].apply(clean_pop)
 ```
 
-#### Destaque — `ex03`: a pergunta do subject
+#### Highlight — `ex03`: the subject's question
 
 > *"Do you see a correlation between lifespan and gross domestic product?"*
 
-O gráfico cruza dois datasets pelo índice comum (o país) e usa escala logarítmica
-no eixo do PIB — sem ela, a nuvem de pontos colapsa contra o eixo, porque o
-rendimento distribui-se por ordens de grandeza e não linearmente.
+The chart joins two datasets on their shared index (the country) and uses a
+logarithmic scale on the GDP axis — without it, the cloud of points collapses
+against the axis, because income spans orders of magnitude rather than a linear
+range.
 
 ```python
 plt.scatter(df_income["1900"], df_life["1900"])
@@ -482,9 +485,9 @@ plt.xscale("log")
 plt.xticks([300, 1000, 10000], ["300", "1k", "10k"])
 ```
 
-A resposta lê-se no gráfico: a correlação existe e é positiva, mas é **logarítmica**
-— duplicar o rendimento dos países mais pobres compra muitos mais anos de vida do
-que duplicar o dos mais ricos.
+The answer reads off the chart: the correlation exists and is positive, but it's
+**logarithmic** — doubling the income of the poorest countries buys far more years
+of life than doubling the income of the richest.
 
 ---
 
@@ -492,22 +495,22 @@ que duplicar o dos mais ricos.
 
 > *"Today, you will see the classes and the heritage."*
 
-O *subject* abre com um aviso: a queixa habitual sobre cientistas de dados é que
-escrevem mau código, porque ignoram a orientação a objetos. O módulo usa *Game of
-Thrones* como domínio.
+The *subject* opens with a warning: the usual complaint about data scientists is
+that they write bad code, because they neglect object-oriented programming. The
+module uses *Game of Thrones* as its domain.
 
-| Ex | Ficheiro | O que faz | Conceito-chave |
+| Ex | File | What it does | Key concept |
 |:---:|:---|:---|:---|
-| 00 | [`S1E9.py`](mod3/ex00/S1E9.py) | `Character` abstrata + `Stark` | `ABC`, `@abstractmethod` |
-| 01 | [`S1E7.py`](mod3/ex01/S1E7.py) | `Baratheon` e `Lannister` | `super()`, `__repr__`/`__str__`, `@classmethod` |
-| 02 | [`DiamondTrap.py`](mod3/ex02/DiamondTrap.py) | `King(Baratheon, Lannister)` | Herança em diamante, C3, `property()` |
-| 03 | [`ft_calculator.py`](mod3/ex03/ft_calculator.py) | Vetor com escalar | `__add__`, `__mul__`, `__sub__`, `__truediv__` |
-| 04 | [`ft_calculator.py`](mod3/ex04/ft_calculator.py) | Produto escalar entre vetores | `@staticmethod`, `zip` |
+| 00 | [`S1E9.py`](mod3/ex00/S1E9.py) | Abstract `Character` + `Stark` | `ABC`, `@abstractmethod` |
+| 01 | [`S1E7.py`](mod3/ex01/S1E7.py) | `Baratheon` and `Lannister` | `super()`, `__repr__`/`__str__`, `@classmethod` |
+| 02 | [`DiamondTrap.py`](mod3/ex02/DiamondTrap.py) | `King(Baratheon, Lannister)` | Diamond inheritance, C3, `property()` |
+| 03 | [`ft_calculator.py`](mod3/ex03/ft_calculator.py) | Vector with a scalar | `__add__`, `__mul__`, `__sub__`, `__truediv__` |
+| 04 | [`ft_calculator.py`](mod3/ex04/ft_calculator.py) | Dot product between vectors | `@staticmethod`, `zip` |
 
-#### Destaque — `ex01`: `@classmethod` como construtor alternativo
+#### Highlight — `ex01`: `@classmethod` as an alternate constructor
 
-`cls` — e não o nome literal da classe — é o que faz o *factory* continuar correto
-em qualquer subclasse:
+`cls` — not the class's literal name — is what keeps the factory correct in any
+subclass:
 
 ```python
 @classmethod
@@ -516,16 +519,16 @@ def create_lannister(cls, first_name: str, is_alive: bool = True):
     return cls(first_name, is_alive)
 ```
 
-#### Destaque — `ex02`: a armadilha do diamante
+#### Highlight — `ex02`: the diamond trap
 
-Joffrey Baratheon é herdeiro das duas casas. Em Python, `King(Baratheon, Lannister)`
-levanta a questão de qual `__init__` corre e de onde vêm os atributos — o problema
-que a **linearização C3** resolve desde o Python 2.3.
+Joffrey Baratheon is heir to both houses. In Python, `King(Baratheon, Lannister)`
+raises the question of which `__init__` runs and where the attributes come from —
+the problem that **C3 linearization** has solved since Python 2.3.
 
-O detalhe fino está nos *setters*. Se `set_eyes` fizesse `self.eyes = color`, e
-`eyes` é uma `property` cujo *setter* é o próprio `set_eyes`, o resultado seria
-recursão infinita. Escrever diretamente em `self.__dict__` contorna o protocolo de
-descritores e resolve o problema:
+The subtle part is in the setters. If `set_eyes` did `self.eyes = color`, and
+`eyes` is a `property` whose setter is `set_eyes` itself, the result would be
+infinite recursion. Writing directly to `self.__dict__` bypasses the descriptor
+protocol and solves the problem:
 
 ```python
 class King(Baratheon, Lannister):
@@ -541,7 +544,7 @@ class King(Baratheon, Lannister):
     eyes = property(get_eyes, set_eyes)
 ```
 
-O `main()` imprime a MRO para tornar a linearização visível:
+`main()` prints the MRO to make the linearization visible:
 
 ```console
 $ python3 DiamondTrap.py
@@ -556,10 +559,10 @@ Inspecting the data structure of class inheritance of Baratheon
 ['Baratheon', 'Character', 'ABC', 'object']
 ```
 
-Lê-se ali porque é que Joffrey nasce de olhos castanhos: `Baratheon` precede
-`Lannister` na MRO, logo é o seu `__init__` que prevalece.
+That's the answer to why Joffrey is born with brown eyes: `Baratheon` comes before
+`Lannister` in the MRO, so its `__init__` is the one that prevails.
 
-#### Destaque — `ex03` e `ex04`: os dois calculadores
+#### Highlight — `ex03` and `ex04`: the two calculators
 
 ```console
 $ python3 mod3/ex03/ft_calculator.py       $ python3 mod3/ex04/ft_calculator.py
@@ -572,9 +575,9 @@ $ python3 mod3/ex03/ft_calculator.py       $ python3 mod3/ex04/ft_calculator.py
 float division by zero
 ```
 
-O `ex03` faz sobrecarga de operadores sobre uma instância; o `ex04` responde a uma
-pista do *subject* — *"find a decorator that can help you to use the Methods
-without instantiating this class"* — com `@staticmethod` e `zip`:
+`ex03` does operator overloading on an instance; `ex04` answers a hint from the
+*subject* — *"find a decorator that can help you to use the Methods without
+instantiating this class"* — with `@staticmethod` and `zip`:
 
 ```python
 @staticmethod
@@ -589,21 +592,22 @@ def dotproduct(V1: list[float], V2: list[float]) -> None:
 
 > *"Today, you will see some Structure Design."*
 
-Python funcional: funções que recebem funções, funções que devolvem funções e
-funções que se lembram do que aconteceu antes.
+Functional Python: functions that take functions, functions that return
+functions, and functions that remember what happened before.
 
-| Ex | Ficheiro | O que faz | Conceito-chave |
+| Ex | File | What it does | Key concept |
 |:---:|:---|:---|:---|
-| 00 | [`statistics.py`](mod4/ex00/statistics.py) | Média, mediana, quartis, desvio-padrão e variância | `*args`/`**kwargs`, despacho por keyword |
-| 01 | [`in_out.py`](mod4/ex01/in_out.py) | Contador com estado preservado entre chamadas | Closures, `nonlocal` |
-| 02 | [`callLimit.py`](mod4/ex02/callLimit.py) | Bloqueia uma função acima de N chamadas | Decorador parametrizado |
-| 03 | [`new_student.py`](mod4/ex03/new_student.py) | Aluno com login e ID derivados | `@dataclass`, `field(init=False)` |
+| 00 | [`statistics.py`](mod4/ex00/statistics.py) | Mean, median, quartiles, standard deviation and variance | `*args`/`**kwargs`, keyword-driven dispatch |
+| 01 | [`in_out.py`](mod4/ex01/in_out.py) | Counter that preserves state across calls | Closures, `nonlocal` |
+| 02 | [`callLimit.py`](mod4/ex02/callLimit.py) | Blocks a function past N calls | Parameterized decorator |
+| 03 | [`new_student.py`](mod4/ex03/new_student.py) | Student with a derived login and ID | `@dataclass`, `field(init=False)` |
 
-#### Destaque — `ex00`: estatística sem bibliotecas
+#### Highlight — `ex00`: statistics with no library
 
-Nem `statistics`, nem `numpy`. Tudo derivado dos argumentos posicionais, e o que
-é calculado é decidido pelos **valores** dos argumentos nomeados — não pelas suas
-chaves, que o *subject* deliberadamente enche de lixo (`toto=`, `tutu=`, `tata=`).
+Neither `statistics` nor `numpy`. Everything is derived from the positional
+arguments, and what gets computed is decided by the **values** of the keyword
+arguments — not their keys, which the *subject* deliberately fills with junk
+(`toto=`, `tutu=`, `tata=`).
 
 ```python
 def ft_statistics(*args: any, **kwargs: any) -> None:
@@ -631,15 +635,15 @@ ERROR
 ERROR
 ```
 
-O terceiro bloco é vazio de propósito — as *keywords* não correspondem a nenhuma
-operação conhecida, portanto nada é calculado e nada rebenta. O quarto imprime
-`ERROR` três vezes: há operações pedidas mas não há dados sobre que operar.
+The third block is empty on purpose — the keywords don't match any known
+operation, so nothing is computed and nothing crashes. The fourth prints `ERROR`
+three times: operations are requested but there's no data to operate on.
 
-#### Destaque — `ex02`: decorador com parâmetro
+#### Highlight — `ex02`: a decorator with a parameter
 
-Três níveis de aninhamento, porque é isso que um decorador parametrizado é:
-`callLimit(3)` **devolve** o decorador, que **devolve** a função embrulhada. O
-contador vive na closure — `global` é proibido pelo *subject*.
+Three levels of nesting, because that's what a parameterized decorator is:
+`callLimit(3)` **returns** the decorator, which **returns** the wrapped function.
+The counter lives in the closure — `global` is forbidden by the *subject*.
 
 ```python
 def callLimit(limit: int):
@@ -668,11 +672,11 @@ f()
 Error: <function g at 0x785960224280> call too many times
 ```
 
-#### Destaque — `ex03`: dataclass com campos derivados
+#### Highlight — `ex03`: a dataclass with derived fields
 
-O *subject* proíbe escrever `__str__` e `__repr__`, e exige que `login` e `id`
-sejam impossíveis de passar ao construtor. `field(init=False)` remove-os da
-assinatura gerada; `__post_init__` calcula-os depois:
+The *subject* forbids writing `__str__` and `__repr__`, and requires `login` and
+`id` to be impossible to pass to the constructor. `field(init=False)` removes
+them from the generated signature; `__post_init__` computes them afterward:
 
 ```python
 @dataclass
@@ -700,9 +704,9 @@ TypeError: Student.__init__() got an unexpected keyword argument 'id'
 
 ---
 
-## Como executar
+## How to run
 
-**Requisitos:** Python 3.10 ou superior.
+**Requirements:** Python 3.10 or newer.
 
 ```bash
 git clone https://github.com/DinisPetrukha/python_for_data_science.git
@@ -710,28 +714,27 @@ cd python_for_data_science
 pip install numpy pandas matplotlib Pillow tqdm
 ```
 
-Cada exercício é autónomo e espera ser executado **a partir do seu próprio
-diretório** — as imagens, os CSV e os módulos importados são resolvidos por
-caminho relativo:
+Every exercise is self-contained and expects to be run **from its own
+directory** — images, CSVs and imported modules are resolved by relative path:
 
 ```bash
-cd mod0/ex08 && python3 tester.py        # comparação ft_tqdm vs tqdm
-cd mod1/ex05 && python3 pimp_image.py    # gera invert/red/green/blue/grey.png
+cd mod0/ex08 && python3 tester.py        # ft_tqdm vs tqdm side by side
+cd mod1/ex05 && python3 pimp_image.py    # generates invert/red/green/blue/grey.png
 cd mod2/ex03 && python3 projection_life.py
 cd mod3/ex02 && python3 DiamondTrap.py
 cd mod4/ex00 && python3 statistics.py
 ```
 
-Os exercícios de `mod1` e `mod2` gravam os gráficos em PNG no diretório de trabalho
-(`zoom_output.png`, `pop_comparison.png`, `projection_1900.png`, …). Esses ficheiros
-não estão versionados: são gerados na execução.
+The `mod1` and `mod2` exercises save charts as PNG files in the working directory
+(`zoom_output.png`, `pop_comparison.png`, `projection_1900.png`, …). These files
+aren't version-controlled: they're generated at run time.
 
-**Instalar o pacote do `mod0/ex09`:**
+**Installing the `mod0/ex09` package:**
 
 ```bash
 cd mod0/ex09
 pip install build
-python3 -m build                              # gera dist/
+python3 -m build                              # produces dist/
 pip install ./dist/ft_package-0.0.1-py3-none-any.whl
 pip show -v ft_package
 ```
@@ -745,78 +748,79 @@ print(count_in_list(["toto", "tata", "toto"], "tutu"))   # 0
 
 ---
 
-## Qualidade de código
+## Code quality
 
-Na 42, a norm de Python é `flake8` sem avisos.
+At 42, the Python norm means `flake8` with zero warnings.
 
 ```bash
 pip install flake8
 python3 -m flake8 .
 ```
 
-**Todos os ficheiros entregues a partir de `mod0/ex05` passam com zero avisos** —
-o que abrange os módulos `mod1` a `mod4` na íntegra.
+**Every file submitted from `mod0/ex05` onward passes with zero warnings** —
+which covers `mod1` through `mod4` in full.
 
-A exceção são os cinco primeiros exercícios do `mod0` (`ex00`–`ex04`), e a razão é
-o próprio *subject*: as regras da norm só aparecem no Capítulo VII, sob o título
-*"From now on you must follow these additional rules"*, **depois** do `ex04`. Esses
-ficheiros ficam como estão, porque documentam a progressão do módulo. Os poucos
-avisos restantes estão em ficheiros `tester.py`, que a 42 não avalia.
+The exception is the first five exercises of `mod0` (`ex00`–`ex04`), and the
+reason is the *subject* itself: the norm rules only appear in Chapter VII, titled
+*"From now on you must follow these additional rules"*, **after** `ex04`. Those
+files are left as they are, because they document the module's progression. The
+few remaining warnings sit in `tester.py` files, which 42 doesn't grade.
 
-Para verificar o âmbito coberto pelo badge:
+To verify the scope the badge refers to:
 
 ```bash
 python3 -m flake8 . | grep -v tester.py | grep -v "mod0/ex0[0-4]"
-# sem output
+# no output
 ```
 
 ---
 
-## Notas de design
+## Design notes
 
-**Duplicação deliberada de ficheiros.** [`load_csv.py`](mod2/ex00/load_csv.py)
-aparece quatro vezes, [`S1E9.py`](mod3/ex00/S1E9.py) três, `load_image.py` quatro.
-Não é descuido: a 42 avalia cada diretório `exNN` isoladamente, e o *subject*
-enumera explicitamente os ficheiros anteriores como "*Files to turn in: Files from
-previous exercises + …*". Cada exercício tem de correr sozinho.
+**Deliberate file duplication.** [`load_csv.py`](mod2/ex00/load_csv.py) appears
+four times, [`S1E9.py`](mod3/ex00/S1E9.py) three times, `load_image.py` four
+times. This isn't an oversight: 42 grades each `exNN` directory in isolation, and
+the *subject* explicitly lists previous files as "*Files to turn in: Files from
+previous exercises + …*". Every exercise has to run on its own.
 
-Nem todas as cópias são iguais, aliás. `load_image.py` evolui com o exercício que
-serve: no `mod1/ex04` incorpora também a função `zoom`, e no `mod1/ex05` imprime
-o array além da forma. É a mesma função, adaptada ao que cada programa precisa.
+Not all copies are identical, either. `load_image.py` evolves with the exercise
+it serves: in `mod1/ex04` it also embeds the `zoom` function, and in `mod1/ex05`
+it prints the array in addition to the shape. It's the same function, adapted to
+what each program needs.
 
-**Tratamento de erros uniforme.** O `assert` documenta a pré-condição, o `try`
-garante que nada escapa, e erros de outras origens são traduzidos para
-`AssertionError` para que a mensagem ao utilizador seja consistente. Isto responde
-diretamente à regra de que qualquer exceção não apanhada invalida o exercício.
+**Consistent error handling.** The `assert` documents the precondition, the `try`
+guarantees nothing escapes, and errors from other sources are translated into
+`AssertionError` so the message shown to the user stays consistent. This directly
+answers the rule that any uncaught exception invalidates the exercise.
 
-**Reimplementar antes de importar.** `ft_filter` em vez de `filter`, `ft_tqdm` em
-vez de `tqdm`, `transpose` em vez de `.T`, variância e desvio-padrão em vez de
-`statistics`. Em vários casos os *subjects* mandam correr as duas versões lado a
-lado — a de biblioteca é a especificação a que a implementação manual tem de
-corresponder.
+**Reimplement before importing.** `ft_filter` instead of `filter`, `ft_tqdm`
+instead of `tqdm`, `transpose` instead of `.T`, variance and standard deviation
+instead of `statistics`. In several cases the *subjects* have you run both
+versions side by side — the library version is the spec the hand-written
+implementation has to match.
 
 ---
 
-## Dados e créditos
+## Data and credits
 
-Os datasets do `mod2` são material educativo livre da
-**[Gapminder Foundation](https://www.gapminder.org/data/)**, distribuído sob
-licença **[CC-BY](https://creativecommons.org/licenses/by/4.0/)**:
+The `mod2` datasets are free educational material from the
+**[Gapminder Foundation](https://www.gapminder.org/data/)**, distributed under a
+**[CC-BY](https://creativecommons.org/licenses/by/4.0/)** license:
 
-| Ficheiro | Conteúdo |
+| File | Content |
 |:---|:---|
-| `life_expectancy_years.csv` | Esperança de vida por país, 1800–2100 |
-| `population_total.csv` | População total por país, 1800–2100 |
-| `income_per_person_gdppercapita_ppp_inflation_adjusted.csv` | PIB *per capita* PPP, ajustado à inflação |
+| `life_expectancy_years.csv` | Life expectancy by country, 1800–2100 |
+| `population_total.csv` | Total population by country, 1800–2100 |
+| `income_per_person_gdppercapita_ppp_inflation_adjusted.csv` | GDP *per capita* PPP, inflation-adjusted |
 
-Os *subjects* em PDF são propriedade da **[42 School](https://42.fr/)** e estão
-incluídos apenas como contexto para quem lê este repositório.
+The PDF subjects are the property of **[42 School](https://42.fr/)** and are
+included only as context for whoever reads this repository.
 
 ---
 
-## Licença e autor
+## License and author
 
-O código deste repositório é distribuído sob licença **MIT** — ver
+The code in this repository is distributed under the **MIT** license — see
 [`mod0/ex09/LICENSE`](mod0/ex09/LICENSE).
 
 **dpetrukh** · [42 Lisboa](https://www.42lisboa.com/) · `dpetrukh@student.42.fr`
