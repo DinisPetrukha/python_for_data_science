@@ -4,5 +4,5 @@ def all_thing_is_obj(object: any) -> int:
     elif (type(object) is str):
         print(f"{object} is in the kitchen : {type(object)}")
     else:
-    	print(f"{(type(object).__name__).capitalize()} : {type(object)}")
-	return 42
+        print(f"{(type(object).__name__).capitalize()} : {type(object)}")
+    return 42
